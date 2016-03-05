@@ -3,19 +3,20 @@
   newTree.value = value;
   _.extend(newTree, treeMethods);
   // your code here
-  newTree.children = [];  // fix me
+  newTree.children = [];
 
   return newTree;
 };
 
 var treeMethods = {};
-
+//O(1)
 treeMethods.addChild = function(value){
   this.children.push(Tree(value));
 };
-
+//O(n)
 treeMethods.contains = function(target){
   var result = false;
+  //recursive function to walk through the tree
   function walkTree(tree) {
     if(tree.value === target) {
       result = true;

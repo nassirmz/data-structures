@@ -3,6 +3,7 @@ var HashTable = function(){
   this._storage = LimitedArray(this._limit);
 };
 
+//O(n)
 HashTable.prototype.insert = function(k, v){
   var i = getIndexBelowMaxForKey(k, this._limit);
   //set bucket if storage already exists
@@ -27,6 +28,7 @@ HashTable.prototype.insert = function(k, v){
   this._storage.set(i, bucket);
 };
 
+//O(n)
 HashTable.prototype.retrieve = function(k){
   var i = getIndexBelowMaxForKey(k, this._limit);
   //go through bucket and make sure key matches
@@ -38,6 +40,7 @@ HashTable.prototype.retrieve = function(k){
   }
 };
 
+//O(n)
 HashTable.prototype.remove = function(k){
   var i = getIndexBelowMaxForKey(k, this._limit);
   //go through bucket, remove correct key value pair.
